@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StoryGame : MonoBehaviour
 {
 
-    [SerializeField] Text storyTitle;
+    [SerializeField] TextMeshProUGUI storyTitle;
     [SerializeField] Text storyText;
     [SerializeField] State initialState;
 
