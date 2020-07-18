@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285d26105c73a447fadaf7c53eff4472, type: 3}
+  m_Name: state2
+  m_EditorClassIdentifier: 
+  storyTitle: State2 Title
+  storyText: This is state 2.
+  nextStages:
+  - {fileID: 11400000, guid: 46f97561b67654c57acc8423cb25a621, type: 2}
+  - {fileID: 11400000, guid: 0d0d76e1b9ff744d9abcb1010a007f4e, type: 2}
