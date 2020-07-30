@@ -31,7 +31,7 @@ To add physics to the elements of the game add a RigidBody component or Rigidbod
 
 If need to add a collider to an object, if you do not want other object to pass through.  Click on Add Component, look for collider and select the one more appropriated for the shape of the object for example Circle Collider 2D.  
 
-If you need to make the object to bounce, you need to create a material and add it to the object.  To create the material go to Project windows, right click, create, Physics Material 2D.  Set the Bounciness property to a value between 0 and 1.  The high the value the higher the bounce.
+If you need to make the object to bounce, you need to create a material and add it to the object.  To create the material go to Project windows, right click, create, Physics Material 2D.  Set the Bounciness property to a value between 0 and 1.  The high the value the higher the bounce.  Also, you can set the Friction property to 0, this will make the object to lose less speed when it collides with other objects.
 
 Once the material has been created, added it to the Material property of the Rigidbody component of the object.
 
@@ -68,3 +68,32 @@ The line below show all the calculations
 ```
 
 The code above show should be  part of a script attached to the paddle object.
+
+## Gravity 
+
+You can control the gravity for individual components with the Gravity Scale property in the Rigidbody group.  Also you can set the gravity for the whole project going to Edit->Project Setting->Physics 2D an change the Gravity field.
+
+## Prefabs
+
+You you create an object that you need to use multiple times, it is better if you make it a prefab.  To create a prefab, create the object as you normally do, with all the properties that you want.  Then drag the object to the project window.  The object should turn blue in the hierarchy.  For better organization you should create a prefabs folder.
+
+## Destroy Object Programmatically
+
+To destroy an object programmatically create an script and attached to the object.  Add a private method OnCollisionEnter2D and inside this method run the Destroy command.  Below is an example.
+
+```csharp
+public class Block : MonoBehaviour
+{
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+}
+```
+
+
+## Audio
+
+You can play a sound when a object collides with other objects.  To do that add a Audio Source component to the object and then drag a audio file to the AudioClip property.
+
+Now you need to add a OnCollisionEnter2D method to script attached to the object.  In the method call : GetComponent<AudioSource>().Play().
